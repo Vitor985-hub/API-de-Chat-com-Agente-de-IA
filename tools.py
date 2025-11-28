@@ -1,12 +1,14 @@
-from strands_agent.tools import tool
+from strands.tools import tool 
 
-class MathTool(tool):
-    name = 'math_tool'
-    description = 'executa operações matematicas simples'
-
-    def run(self, query: str) -> str:
+@tool
+def math_tool(expression: str) -> str:
+    """
+    resolve uma expressão matematica enviada como texto.
+    exemplo "2 + 2 = 4"
+    """
     try:
-        result = eval(query)
-        return str(result)
-    except Exception:
-        return 'não consegui calcular isso'
+        retult = eval(expression)
+        return str(retult)
+    except Exception as e:
+        return f"Erro ao calcular {e}"
+ 

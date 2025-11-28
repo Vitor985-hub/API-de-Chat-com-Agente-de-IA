@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from agent import agent
+from agent import chat_agent
 
 app = FastAPI()
 
@@ -9,5 +9,5 @@ class Message(BaseModel):
 
 @app.post('/chat')
 async def chat(data: Message):
-    response = agent.run(data.Message)
+    response = chat_agent(data.Message)
     return{'response': response}

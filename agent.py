@@ -1,15 +1,16 @@
-from strands_agents import agent
-from strands_agent.llms import ollamaLLM
-from tools import MathTool
-from config import ollama_model
+from strands import Agent
+from strands.models.ollama import OllamaModel
+from tools import math_tool
 
-llm = ollamaLLM(model = ollama_model)
+ollama_model = OllamaModel(
+    host='http://localhost:11434',
+    model_id='llama3.1'
+)
 
-agent = agent(
-    llm = llm,
-    tools = [MathTool()],
-    instructions = """
-você é um agente que responde perguntas.
-se a pergunta envolver matematica, use math_tool.
-caso o contrario, responda normalmente."""
+chat_agent = Agent(
+    model = ollama_model,
+    tools = [math_tool],
+    system_prompt= "Você só deve usar a math_tool quando o usuário pedir explicitamente "
+    "um cálculo matemático ou enviar uma expressão matemática. "
+    "Para saudações e conversas normais, responda normalmente."
 )
