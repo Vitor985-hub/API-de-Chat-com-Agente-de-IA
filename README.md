@@ -50,19 +50,24 @@ ollama pull llama3.1
 Ou outro modelo que você definir no .env.
 
 ---
-# ⚙️ Instalação e Execução
 
 📦 Instalação
-1️⃣ Crie o ambiente virtual
-python -m venv .venv
+1️⃣ clone o repositorio
+````'
+https://github.com/Vitor985-hub/API-de-Chat-com-Agente-de-IA.git
+````
 
-2️⃣ Ative o ambiente
+2️⃣ Crie o ambiente virtual
+````
+python -m venv .venv
+````
+3️⃣ Ative o ambiente
 
 Windows:
 ````
 .venv\Scripts\activate
 ````
-3️⃣ Instale as dependências
+4️⃣ Instale as dependências
 ````
 pip install -r requirements.txt
 ````
