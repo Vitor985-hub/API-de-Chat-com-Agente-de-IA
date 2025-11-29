@@ -90,24 +90,15 @@ Documentação interativa:
 ---
 
 # 🚀 Testando o Endpoint
-
-Exemplo usando curl:
-````
-curl -X POST "http://127.0.0.1:8000/chat" \
--H "Content-Type: application/json" \
--d "{\"Message\": \"Olá, quem é você?\"}"
-````
+```
+{
+  "message": "Quanto é 1234 * 5678?"
+}
+```
 Resposta esperada:
 ````
 {
-  "response": {
-    "message": {
-      "role": "assistant",
-      "content": [
-        { "text": "Olá! Eu sou seu agente de IA..." }
-      ]
-    }
-  }
+  "response": "7006652"
 }
 ````
 ---
